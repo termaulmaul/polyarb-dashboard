@@ -1,0 +1,1 @@
+cd /Users/maul/github/polyarb-dashboard && pnpm run dev
