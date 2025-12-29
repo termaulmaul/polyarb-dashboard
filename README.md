@@ -1,8 +1,35 @@
-# Welcome to your Lovable project
+# PolyArb - Binary Market Arbitrage Dashboard
+
+**Fully Responsive** 📱💻 - Optimized for mobile, tablet, and desktop
 
 ## Project info
 
 **URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+
+## 🚀 Quick Start
+
+```bash
+# Install dependencies
+pnpm install
+
+# Start development server
+pnpm run dev
+```
+
+## 📱 Responsive Features
+
+This dashboard is fully responsive with:
+
+- **Mobile (< 768px)**: Single column layout, sidebar as overlay
+- **Tablet (768px - 1024px)**: Optimized 2-column layouts
+- **Desktop (> 1024px)**: Full layout with persistent sidebar
+
+### Key Responsive Components:
+- **Opportunities Table**: Cards on mobile, table on desktop
+- **Header**: Compact mobile version with hamburger menu
+- **Sidebar**: Hidden on mobile, accessible via menu button
+- **Forms**: Responsive grid layouts
+- **Typography**: Scaled text sizes for readability
 
 ## How can I edit this code?
 

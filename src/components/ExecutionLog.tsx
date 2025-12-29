@@ -59,18 +59,18 @@ export function ExecutionLog({ logs }: ExecutionLogProps) {
   return (
     <div className="glass-panel p-4 flex flex-col h-full">
       <div className="flex items-center justify-between mb-4">
-        <div className="flex items-center gap-2">
-          <Activity className="w-5 h-5 text-primary" />
-          <h2 className="text-lg font-semibold">Execution Log</h2>
-          <Badge variant="secondary" className="ml-2">
+        <div className="flex items-center gap-2 min-w-0">
+          <Activity className="w-5 h-5 text-primary flex-shrink-0" />
+          <h2 className="text-base sm:text-lg font-semibold truncate">Execution Log</h2>
+          <Badge variant="secondary" className="ml-1 sm:ml-2 flex-shrink-0">
             {filteredLogs.length}
           </Badge>
         </div>
-        
-        <div className="flex items-center gap-2">
+
+        <div className="flex items-center gap-2 flex-shrink-0">
           <Filter className="w-4 h-4 text-muted-foreground" />
           <Select value={filter} onValueChange={(v) => setFilter(v as StatusFilter)}>
-            <SelectTrigger className="w-[130px] h-8 text-xs bg-secondary border-border">
+            <SelectTrigger className="w-[110px] sm:w-[130px] h-8 text-xs bg-secondary border-border">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
@@ -97,36 +97,36 @@ export function ExecutionLog({ logs }: ExecutionLogProps) {
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-xs font-mono text-muted-foreground">
-                        {formatTime(log.timestamp)}
-                      </span>
-                      <Badge 
-                        variant="outline" 
-                        className={`text-[10px] px-1.5 py-0 ${config.className}`}
-                      >
-                        <StatusIcon className="w-3 h-3 mr-1" />
-                        {config.label}
-                      </Badge>
-                    </div>
-                    <p className="text-sm font-medium truncate mb-1">
-                      {log.market}
-                    </p>
-                    <div className="flex items-center gap-4 text-xs">
-                      <span className="font-mono">
-                        <span className="text-muted-foreground">YES:</span>{' '}
-                        <span className="text-foreground">${log.yesPrice.toFixed(2)}</span>
-                      </span>
-                      <span className="font-mono">
-                        <span className="text-muted-foreground">NO:</span>{' '}
-                        <span className="text-foreground">${log.noPrice.toFixed(2)}</span>
-                      </span>
-                      <span className={`font-mono font-semibold ${
-                        log.expectedEdge > 0 ? 'text-profit' : 'text-muted-foreground'
-                      }`}>
-                        {log.expectedEdge > 0 ? '+' : ''}{log.expectedEdge.toFixed(1)}%
-                      </span>
-                    </div>
+                     <div className="flex items-center gap-2 mb-1">
+                       <span className="text-xs font-mono text-muted-foreground">
+                         {formatTime(log.timestamp)}
+                       </span>
+                       <Badge
+                         variant="outline"
+                         className={`text-[10px] px-1.5 py-0 ${config.className}`}
+                       >
+                         <StatusIcon className="w-3 h-3 mr-1" />
+                         {config.label}
+                       </Badge>
+                     </div>
+                     <p className="text-sm font-medium truncate mb-1">
+                       {log.market}
+                     </p>
+                     <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs">
+                       <span className="font-mono">
+                         <span className="text-muted-foreground">YES:</span>{' '}
+                         <span className="text-foreground">${log.yesPrice.toFixed(2)}</span>
+                       </span>
+                       <span className="font-mono">
+                         <span className="text-muted-foreground">NO:</span>{' '}
+                         <span className="text-foreground">${log.noPrice.toFixed(2)}</span>
+                       </span>
+                       <span className={`font-mono font-semibold ${
+                         log.expectedEdge > 0 ? 'text-profit' : 'text-muted-foreground'
+                       }`}>
+                         {log.expectedEdge > 0 ? '+' : ''}{log.expectedEdge.toFixed(1)}%
+                       </span>
+                     </div>
                     {log.details && (
                       <p className="text-xs text-muted-foreground mt-1">
                         {log.details}

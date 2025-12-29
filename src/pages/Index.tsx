@@ -9,6 +9,7 @@ import { BotConfig, Opportunity } from '@/types/arbitrage';
 
 const Index = () => {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
   const [botConfig, setBotConfig] = useState<BotConfig>({
     enabled: true,
     minEdge: 1.5,
@@ -49,30 +50,54 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <div className="flex flex-col h-screen">
         {/* Header */}
-        <div className="p-4 pb-0">
-          <Header botRunning={botConfig.enabled} walletBalance={12847.52} />
+        <div className="p-2 sm:p-4 pb-0">
+          <Header
+            botRunning={botConfig.enabled}
+            walletBalance={12847.52}
+            onMobileMenuClick={() => setMobileSidebarOpen(true)}
+          />
         </div>
 
         {/* Main Content */}
-        <div className="flex flex-1 gap-4 p-4 overflow-hidden">
-          {/* Sidebar */}
-          <MetricsSidebar
-            metrics={mockMetrics}
-            collapsed={sidebarCollapsed}
-            onToggle={() => setSidebarCollapsed(!sidebarCollapsed)}
-          />
+        <div className="flex flex-1 gap-2 sm:gap-4 p-2 sm:p-4 overflow-hidden">
+          {/* Mobile Sidebar Overlay */}
+          {mobileSidebarOpen && (
+            <div className="fixed inset-0 z-50 md:hidden">
+              <div className="absolute inset-0 bg-black/50" onClick={() => setMobileSidebarOpen(false)} />
+              <div className="absolute left-0 top-0 h-full">
+                <MetricsSidebar
+                  metrics={mockMetrics}
+                  collapsed={false}
+                  onToggle={() => setMobileSidebarOpen(false)}
+                />
+              </div>
+            </div>
+          )}
+
+          {/* Sidebar - Hidden on mobile, shown on md+ */}
+          <div className="hidden md:block">
+            <MetricsSidebar
+              metrics={mockMetrics}
+              collapsed={sidebarCollapsed}
+              onToggle={() => setSidebarCollapsed(!sidebarCollapsed)}
+            />
+          </div>
 
           {/* Main Dashboard */}
-          <main className="flex-1 flex flex-col gap-4 overflow-hidden">
+          <main className="flex-1 flex flex-col gap-2 sm:gap-4 overflow-hidden min-h-0">
             {/* Opportunities Table */}
-            <div className="flex-shrink-0">
+            <div className="flex-shrink-0 min-h-0">
               <OpportunitiesTable opportunities={opportunities} />
             </div>
 
             {/* Bottom Section: Control Panel + Execution Log */}
-            <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-4 min-h-0">
-              <BotControlPanel config={botConfig} onConfigChange={setBotConfig} />
-              <ExecutionLog logs={mockExecutionLogs} />
+            <div className="flex-1 grid grid-cols-1 xl:grid-cols-2 gap-2 sm:gap-4 min-h-0 auto-rows-fr">
+              <div className="min-h-0">
+                <BotControlPanel config={botConfig} onConfigChange={setBotConfig} />
+              </div>
+              <div className="min-h-0">
+                <ExecutionLog logs={mockExecutionLogs} />
+              </div>
             </div>
           </main>
         </div>
