@@ -164,4 +164,39 @@
       transform: translateY(0);
     }
   }
+
+  .animate-flash {
+    animation: flash 1.5s ease-out;
+  }
+
+  @keyframes flash {
+    0% {
+      background-color: hsl(var(--success) / 0.3);
+    }
+    100% {
+      background-color: transparent;
+    }
+  }
+
+  /* Prevent font-related layout shifts during updates */
+  .stable-font {
+    font-variation-settings: 'opsz' 14, 'wght' 500;
+    font-weight: 500;
+  }
+
+  /* Smooth color transitions without layout shift */
+  .transition-stable {
+    transition: color 0.15s ease-out, background-color 0.15s ease-out;
+    will-change: color, background-color;
+  }
+
+  /* Force consistent font rendering - prevent jitter on updates */
+  .font-stable {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-synthesis: none;
+  }
+
+
 }

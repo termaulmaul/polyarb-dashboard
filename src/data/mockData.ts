@@ -66,7 +66,7 @@ export const mockOpportunities: Opportunity[] = [
 export const mockExecutionLogs: ExecutionLog[] = [
   {
     id: '1',
-    timestamp: new Date(Date.now() - 60000),
+    timestamp: new Date(Date.now() - 60000).toISOString(),
     market: 'Will BTC hit $100k in 2025?',
     yesPrice: 0.52,
     noPrice: 0.46,
@@ -76,7 +76,7 @@ export const mockExecutionLogs: ExecutionLog[] = [
   },
   {
     id: '2',
-    timestamp: new Date(Date.now() - 120000),
+    timestamp: new Date(Date.now() - 120000).toISOString(),
     market: 'Fed rate cut in January?',
     yesPrice: 0.34,
     noPrice: 0.64,
@@ -85,7 +85,7 @@ export const mockExecutionLogs: ExecutionLog[] = [
   },
   {
     id: '3',
-    timestamp: new Date(Date.now() - 180000),
+    timestamp: new Date(Date.now() - 180000).toISOString(),
     market: 'Trump wins 2024 election?',
     yesPrice: 0.56,
     noPrice: 0.43,
@@ -95,7 +95,7 @@ export const mockExecutionLogs: ExecutionLog[] = [
   },
   {
     id: '4',
-    timestamp: new Date(Date.now() - 240000),
+    timestamp: new Date(Date.now() - 240000).toISOString(),
     market: 'ETH flips BTC in 2025?',
     yesPrice: 0.08,
     noPrice: 0.92,
@@ -105,7 +105,7 @@ export const mockExecutionLogs: ExecutionLog[] = [
   },
   {
     id: '5',
-    timestamp: new Date(Date.now() - 300000),
+    timestamp: new Date(Date.now() - 300000).toISOString(),
     market: 'Apple announces AI device?',
     yesPrice: 0.40,
     noPrice: 0.58,
@@ -114,7 +114,7 @@ export const mockExecutionLogs: ExecutionLog[] = [
   },
   {
     id: '6',
-    timestamp: new Date(Date.now() - 360000),
+    timestamp: new Date(Date.now() - 360000).toISOString(),
     market: 'SpaceX Starship success?',
     yesPrice: 0.71,
     noPrice: 0.30,

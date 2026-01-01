@@ -6,18 +6,25 @@ export interface Opportunity {
   sum: number;
   edge: number;
   executable: boolean;
-  updatedAt: Date;
+  updatedAt: string; // ISO date string from backend
+  marketId?: string;
+  isMock?: boolean; // Mark if this is mock data
+  isSimulated?: boolean; // Mark if this is simulated for demo
+  volume?: number; // Market volume
+  category?: string; // Market category
 }
 
 export interface ExecutionLog {
   id: string;
-  timestamp: Date;
+  timestamp: string; // ISO date string from backend
   market: string;
   yesPrice: number;
   noPrice: number;
   expectedEdge: number;
-  status: 'BOTH_FILLED' | 'PARTIAL_FILL' | 'FAILED' | 'CANCELLED';
+  status: 'BOTH_FILLED' | 'PARTIAL_FILL' | 'FAILED' | 'CANCELLED' | 'PENDING';
   details?: string;
+  pnl?: number; // PnL from execution
+  actualEdge?: number; // Actual edge achieved
 }
 
 export interface BotConfig {

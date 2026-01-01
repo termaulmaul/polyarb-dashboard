@@ -12,9 +12,31 @@
 # Install dependencies
 pnpm install
 
-# Start development server
-pnpm run dev
+# Start both frontend and backend (recommended)
+pnpm run dev:full
+
+# Or start individually:
+pnpm run dev:frontend  # Frontend only (port 8081)
+pnpm run dev:backend   # Backend only (port 3001)
+
+# Alternative: Use the shell script
+./start_full.sh
 ```
+
+### 🌐 URLs
+- **Frontend**: http://localhost:8081
+- **Backend API**: http://localhost:3001
+- **Test Page**: http://localhost:8081/test.html
+
+## 🔑 Wallet Connection
+
+PolyArb requires an EVM wallet connection to interact with Polymarket:
+
+- **Supported**: MetaMask, WalletConnect, Coinbase Wallet
+- **Network**: Polygon (automatically switches)
+- **Security**: Private keys stay client-side
+
+See [WALLET_SETUP.md](WALLET_SETUP.md) for detailed setup instructions.
 
 ## 📱 Responsive Features
 

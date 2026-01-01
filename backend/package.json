@@ -1,0 +1,40 @@
+{
+  "name": "polyarb-backend",
+  "version": "1.0.0",
+  "description": "Polymarket arbitrage bot backend",
+  "main": "dist/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "echo 'No build needed for JS backend'",
+    "start": "node server.js",
+    "lint": "echo 'No linting configured'",
+    "type-check": "echo 'No type checking for JS backend'"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "ws": "^8.14.2",
+    "zod": "^3.22.4",
+    "dotenv": "^16.3.1",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "winston": "^3.11.0",
+    "node-cron": "^3.0.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/ws": "^8.5.9",
+    "@types/cors": "^2.8.17",
+    "@types/node": "^20.10.0",
+    "@types/better-sqlite3": "^7.6.9",
+    "@types/node-cron": "^3.0.11",
+    "tsx": "^4.6.2",
+    "typescript": "^5.3.3",
+    "eslint": "^8.56.0",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
