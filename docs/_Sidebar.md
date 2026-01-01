@@ -1,7 +1,7 @@
-# PolyArb Wiki
+# PolyArb Documentation
 
 ## Getting Started
-- [Home](../index.md) - Overview and quick start
+- [Home](index.md) - Overview and quick start
 - [Architecture Overview](architecture.md) - System design and components
 - [Risk Management](risk-management.md) - Safety and risk controls
 - [API Reference](api-reference.md) - Complete API documentation
@@ -24,7 +24,7 @@
 ## Quick Links
 - [GitHub Repository](https://github.com/termaulmaul/polyarb-dashboard)
 - [Live Demo](http://localhost:8080) (when running)
-- [Main README](../../README.md)
+- [Main README](../README.md)
 
 ## Status
 - **Version**: 1.0.0 (Production Ready)
