@@ -1,31 +1,30 @@
 # PolyArb Wiki
 
 ## Getting Started
-- [[Home|Home]] - Overview and quick start
-- [[Architecture Overview|Architecture Overview]] - System design and components
-- [[Risk Management|Risk Management]] - Safety and risk controls
-- [[API Reference|API Reference]] - Complete API documentation
+- [Home](../index.md) - Overview and quick start
+- [Architecture Overview](architecture.md) - System design and components
+- [Risk Management](risk-management.md) - Safety and risk controls
+- [API Reference](api-reference.md) - Complete API documentation
 
 ## Deployment
-- [[Deployment Guide|Deployment Guide]] - Production deployment instructions
-- [[Troubleshooting|Troubleshooting]] - Common issues and solutions
+- [Deployment Guide](deployment.md) - Production deployment instructions
+- [Troubleshooting](troubleshooting.md) - Common issues and solutions
 
 ## Development
-- [[Contributing|Contributing]] - How to contribute
-- [[Testing|Testing]] - Testing strategies and procedures
+- [Contributing](contributing.md) - How to contribute
+- [Testing](testing.md) - Testing strategies and procedures
 
 ## Reference
-- [[Configuration|Configuration]] - Configuration options
-- [[Monitoring|Monitoring]] - Monitoring and alerting
-- [[Security|Security]] - Security best practices
+- [Configuration](configuration.md) - Configuration options
+- [Monitoring](monitoring.md) - Monitoring and alerting
+- [Security](security.md) - Security best practices
 
 ---
 
 ## Quick Links
 - [GitHub Repository](https://github.com/termaulmaul/polyarb-dashboard)
 - [Live Demo](http://localhost:8080) (when running)
-- [API Documentation](api-reference.md)
-- [Deployment Guide](deployment.md)
+- [Main README](../../README.md)
 
 ## Status
 - **Version**: 1.0.0 (Production Ready)
